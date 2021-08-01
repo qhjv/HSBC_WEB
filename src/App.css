@@ -175,6 +175,7 @@ button.contactPage--form__submit:active{
 } 
 .page2__content--title h5{
     font-size: 25px;
+    margin-top: 20px;
 }  
 p.page2__content--p {
     width: 37%;
