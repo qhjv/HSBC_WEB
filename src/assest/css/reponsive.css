@@ -1,0 +1,174 @@
+/*------------------
+ Mobile vs Ipad
+ ------------------ */
+
+
+
+ @media (max-width:1023px){
+
+
+}
+
+
+
+/*------------------
+      Ipad     
+------------------*/
+
+
+@media(min-width:740px) and (max-width:1023px){
+
+    a.header__list--a {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+    .contactPage--input {
+        width: 90%;
+    }
+    p.page2__content--p {
+        width: 70%;
+    }
+    .page5 {
+        padding: 0;
+    }
+    .img_taisao {
+        flex-direction: column-reverse!important;
+    }
+    .img_taisao--img2 {
+        position: relative;
+        left: 0;
+    }
+    section#page6 {
+        margin-top: 50px;
+    }
+    .page8{
+        height:100%;
+        padding-bottom: 50px;
+    }
+    .thoiGian,
+    .img_thoiGian {
+        margin: auto;
+        width: 100%;
+    }
+    .footer__title {
+        margin-top: 40px;
+    }
+    .footer .container {
+        padding: 0 50px;
+    }
+    ul.list__luuY {
+        width: 100%!important;
+    }
+    .page7__title h3{
+        width:100%!important
+    }
+    .luuY h6 ,
+    .luuY p{
+        width: 100%!important;
+
+    }
+}
+
+
+/*------------------
+    Mobile     
+------------------*/
+
+@media (max-width:739px){
+    .header {
+        height: 100%;
+        padding: 20px 0;
+    }
+    .header__div {
+        flex-direction: column;
+    }
+    ul.header__lists{
+        flex-wrap: wrap;
+    }
+    ul.header__lists {
+        justify-content: space-around;
+    }
+    li.header__list {
+        width: 47%;
+        /* padding: 10px; */
+        background: var(--color-main);
+        padding: 6px;
+        text-align: center;
+        border-radius: 30px;
+        margin-top: 20px;
+    }
+    a.header__list--a {
+        padding: 0;
+        margin-left: 0;
+    }
+    .contactPage--input {
+        width: 100%;
+    }
+    p.page2__content--p {
+        width: 100%;
+    }
+    .img_taisao {
+        flex-direction: column-reverse!important;
+    }
+    .img_taisao--img2 {
+        position: relative;
+        left: 0;
+    }
+    .img_taisao--img1 {
+        width: 100%;
+    }
+    .page8{
+        height:100%;
+        padding-bottom: 50px;
+    }
+    .thoiGian,
+    .img_thoiGian {
+        margin: auto;
+        width: 100%;
+    }
+    ul.list__luuY {
+        width: 100%;
+    }
+    .footer .container {
+        padding-right: 15px;
+        padding-left: 15px; 
+    }
+    .doiTac__list {
+        height: 125px;
+    }
+    .footer .col-lg-5.col-md-12 {
+        padding: 0 40px;
+    }
+    .footer__title {
+        margin-top: 20px;
+    }
+    .page8 .contactPage--input{
+        padding: 20px 10px;
+    }
+    .page7__title h3{
+        width:100%!important
+    }
+    .luuY h6,
+    .luuY p {
+        width: 100%!important;
+    }
+    .notify,
+    .zaloFix{
+        left:10px
+    }
+    .zaloFix{
+        width:60px;
+        height:60px
+    }
+    .telFix a i.fa.fa-phone{
+        font-size:50px
+    }
+    .formPage--content {
+        font-size: 20px;
+    }
+    button.contactPage--form__submit {
+        font-size: 13px;
+    }
+}
+
+

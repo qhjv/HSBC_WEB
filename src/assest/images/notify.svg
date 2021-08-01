@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg10"
+   version="1.1"
+   stroke="rgba(0, 149, 247, 0.8)"
+   viewBox="0 0 45 45"
+   height="45"
+   width="45">
+  <metadata
+     id="metadata16">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs14" />
+  <g
+     id="g8"
+     stroke-width="2"
+     transform="translate(1 1)"
+     fill-rule="evenodd"
+     fill="none">
+    <circle
+       id="circle2"
+       stroke-opacity="0"
+       r="6"
+       cy="22"
+       cx="22">
+      <animate
+         repeatCount="indefinite"
+         calcMode="linear"
+         values="6;22"
+         dur="3s"
+         begin="1.5s"
+         attributeName="r" />
+      <animate
+         repeatCount="indefinite"
+         calcMode="linear"
+         values="1;0"
+         dur="3s"
+         begin="1.5s"
+         attributeName="stroke-opacity" />
+      <animate
+         repeatCount="indefinite"
+         calcMode="linear"
+         values="2;0"
+         dur="3s"
+         begin="1.5s"
+         attributeName="stroke-width" />
+    </circle>
+    <circle
+       id="circle4"
+       stroke-opacity="0"
+       r="6"
+       cy="22"
+       cx="22">
+      <animate
+         repeatCount="indefinite"
+         calcMode="linear"
+         values="6;22"
+         dur="3s"
+         begin="3s"
+         attributeName="r" />
+      <animate
+         repeatCount="indefinite"
+         calcMode="linear"
+         values="1;0"
+         dur="3s"
+         begin="3s"
+         attributeName="stroke-opacity" />
+      <animate
+         repeatCount="indefinite"
+         calcMode="linear"
+         values="2;0"
+         dur="3s"
+         begin="3s"
+         attributeName="stroke-width" />
+    </circle>
+    <circle
+       id="circle6"
+       fill="rgba(0, 149, 247, 1)"
+       r="6"
+       cy="22"
+       cx="22" />
+  </g>
+</svg>
