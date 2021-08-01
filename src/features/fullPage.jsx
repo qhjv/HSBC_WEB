@@ -138,11 +138,10 @@ function FullPage(props) {
                       <input required name="working" type="text" placeholder="Công Việc Đang Làm" id="working" />
                       <select required name="hinhthucvay" id="hinhthucvay">
                         <option value>Hình Thức Vay Vốn</option>
-                        <option value="Vay Theo Lương">Vay Theo Lương</option>
-                        <option value="Vay Theo BHNT">Vay Theo BHNT</option>
-                        <option value="Mở Thẻ Tín Dụng">Mở Thẻ Tín Dụng</option>
-                        <option value="Vay Theo Sổ Đỏ Đã Hoặc Chưa Thế Chấp">Vay Theo Sổ Đỏ Đã Hoặc Chưa Thế
-                          Chấp</option>
+                        <option value="Vay Theo Lương Chuyển Khoản">Vay Theo Lương Chuyển Khoản</option>
+                        <option value="Vay Theo Lương Tiền Mặt">Vay Theo Lương Tiền Mặt</option>
+                        <option value="Lao Động Tự Do (Tạm Dừng Hỗ Trợ)">Lao Động Tự Do ( Tạm Dừng Hỗ Trơn )</option>
+                        <option value="Vay Theo Hợp Đồng BHNT">Vay Theo Hợp Đồng BHNT</option>
                       </select>
                       <p>* Thông tin của quý khách luôn được bảo mật tuyệt đối.</p>
                       <button type="submit" className="contactPage--form__submit">
@@ -285,11 +284,10 @@ function FullPage(props) {
                       <input required name="working" type="text" placeholder="Công Việc Đang Làm" id="working" />
                       <select required name="hinhthucvay" id="hinhthucvay">
                         <option value>Hình Thức Vay Vốn</option>
-                        <option value="Vay Theo Lương">Vay Theo Lương</option>
-                        <option value="Vay Theo BHNT">Vay Theo BHNT</option>
-                        <option value="Mở Thẻ Tín Dụng">Mở Thẻ Tín Dụng</option>
-                        <option value="Vay Theo Sổ Đỏ Đã Hoặc Chưa Thế Chấp">Vay Theo Sổ Đỏ Đã Hoặc Chưa Thế
-                          Chấp</option>
+                        <option value="Vay Theo Lương Chuyển Khoản">Vay Theo Lương Chuyển Khoản</option>
+                        <option value="Vay Theo Lương Tiền Mặt">Vay Theo Lương Tiền Mặt</option>
+                        <option value="Lao Động Tự Do (Tạm Dừng Hỗ Trợ)">Lao Động Tự Do ( Tạm Dừng Hỗ Trơn )</option>
+                        <option value="Vay Theo Hợp Đồng BHNT">Vay Theo Hợp Đồng BHNT</option>
                       </select>
                       <button type="submit" className="contactPage--form__submit">
                         ĐĂNG KÝ THÔNG TIN TƯ VẤN
@@ -377,11 +375,10 @@ function FullPage(props) {
                       <input required name="working" type="text" placeholder="Công Việc Đang Làm" id="working" />
                       <select required name="hinhthucvay" id="hinhthucvay">
                         <option value>Hình Thức Vay Vốn</option>
-                        <option value="Vay Theo Lương">Vay Theo Lương</option>
-                        <option value="Vay Theo BHNT">Vay Theo BHNT</option>
-                        <option value="Mở Thẻ Tín Dụng">Mở Thẻ Tín Dụng</option>
-                        <option value="Vay Theo Sổ Đỏ Đã Hoặc Chưa Thế Chấp">Vay Theo Sổ Đỏ Đã Hoặc Chưa Thế
-                          Chấp</option>
+                        <option value="Vay Theo Lương Chuyển Khoản">Vay Theo Lương Chuyển Khoản</option>
+                        <option value="Vay Theo Lương Tiền Mặt">Vay Theo Lương Tiền Mặt</option>
+                        <option value="Lao Động Tự Do (Tạm Dừng Hỗ Trợ)">Lao Động Tự Do ( Tạm Dừng Hỗ Trơn )</option>
+                        <option value="Vay Theo Hợp Đồng BHNT">Vay Theo Hợp Đồng BHNT</option>
                       </select>
                       <button type="submit" className="contactPage--form__submit">
                         ĐĂNG KÝ THÔNG TIN TƯ VẤN
@@ -482,7 +479,7 @@ function FullPage(props) {
                 <ul>
                   <li>
                     <i className="fa fa-home" />
-                    Address: Hà Nội
+                    Address: Hà Nội , Hồ Chí Minh và hơn 20 tỉnh thành khác
                   </li>
                   <li>
                     <i className="fa fa-phone" />
@@ -531,11 +528,10 @@ function FullPage(props) {
                       <input required name="working" type="text" placeholder="Công Việc Đang Làm" id="working" />
                   <select required name="hinhthucvay" id="hinhthucvay">
                     <option value>Hình Thức Vay Vốn</option>
-                    <option value="Vay Theo Lương">Vay Theo Lương</option>
-                    <option value="Vay Theo BHNT">Vay Theo BHNT</option>
-                    <option value="Mở Thẻ Tín Dụng">Mở Thẻ Tín Dụng</option>
-                    <option value="Vay Theo Sổ Đỏ Đã Hoặc Chưa Thế Chấp">Vay Theo Sổ Đỏ Đã Hoặc Chưa Thế
-                      Chấp</option>
+                    <option value="Vay Theo Lương Chuyển Khoản">Vay Theo Lương Chuyển Khoản</option>
+                    <option value="Vay Theo Lương Tiền Mặt">Vay Theo Lương Tiền Mặt</option>
+                    <option value="Lao Động Tự Do (Tạm Dừng Hỗ Trợ)">Lao Động Tự Do ( Tạm Dừng Hỗ Trơn )</option>
+                    <option value="Vay Theo Hợp Đồng BHNT">Vay Theo Hợp Đồng BHNT</option>
                   </select>
                   <p>* Thông tin của quý khách luôn được bảo mật tuyệt đối.</p>
                   <button type="submit" className="contactPage--form__submit">
@@ -555,7 +551,7 @@ function FullPage(props) {
           </a>
         </div>
         <div className="zaloFix">
-          <a href>
+          <a href="https://zalo.me/0383002528">
             <img src={zalo} alt="" />
           </a>
         </div>
