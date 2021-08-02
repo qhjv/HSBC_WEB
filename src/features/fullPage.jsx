@@ -302,8 +302,26 @@ function FullPage(props) {
           <section className="page6" id="page6">
             <div className="container">
               <div className="row">
-                <div className="col-md-5">
-                  <img src={mophongkhoanvay} alt="" />
+                <div className="col-md-6">
+                    <div className="page6__title">
+                      <h3>Bảng tính lãi suất minh họa</h3>
+                    </div>
+                    <div className="page6">
+                      <p> - Số tiền khách hàng có nghĩa vụ phải trả hàng tháng là cố định ( Ví dụ: Vay 50 triệu trong 36 tháng. Mỗi tháng phải trả 1,8 triệu trong đó đã bao gồm cả gốc & lãi. Ngoài ra không phát sinh chi phí ngoài. Không phí hồ sơ vay vốn )</p>
+                      <p>- Ví dụ cụ thể: Khoản vay 100 triệu trong 48 tháng với lãi suất 0,6%/tháng</p>
+                      <p>Gốc trả hàng tháng: 100.000.000 : 48 = 2.084.000 đ</p>
+                      <p>Lãi trả hàng tháng: 100.000.000 x 0,6% = 600.000 đ</p>
+                      <p>Tổng số tiền Khách hàng trả hàng tháng: 2.084.000 + 600.000 = 2.684.000 đ</p>
+                    </div>
+                </div>
+                <div className="col-md-6">
+                    <div className="page6__title">
+                      <h4>Lãi suất vay tính chấp ngân hàng được tính:</h4>
+                    </div>
+                    <div className="page6">
+                      <p>+ Dư nợ giảm dần từ 18% đến 38%/năm tương đương lãi suất phẳng: 0,8% đến 1.8%/tháng ( Lãi suất khách hàng khi vay tùy thuộc vào đối tượng khách hàng tại Vietcombank, ưu đãi gói vay, ... Nhưng cao nhất là 1.8%/tháng)</p>
+                      <p>+ Lãi suất vay tín chấp là cố định trong suốt quá trình khách hàng trả nợ cho Ngân hàng.</p>
+                    </div>
                 </div>
               </div>
             </div>
