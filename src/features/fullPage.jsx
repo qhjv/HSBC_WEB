@@ -140,7 +140,7 @@ function FullPage(props) {
                         <option value>Hình Thức Vay Vốn</option>
                         <option value="Vay Theo Lương Chuyển Khoản">Vay Theo Lương Chuyển Khoản</option>
                         <option value="Vay Theo Lương Tiền Mặt">Vay Theo Lương Tiền Mặt</option>
-                        <option value="Lao Động Tự Do (Tạm Dừng Hỗ Trợ)">Lao Động Tự Do ( Tạm Dừng Hỗ Trơn )</option>
+                        <option value="Lao Động Tự Do (Tạm Dừng Hỗ Trợ)">Lao Động Tự Do ( Tạm Dừng Hỗ Trợ )</option>
                         <option value="Vay Theo Hợp Đồng BHNT">Vay Theo Hợp Đồng BHNT</option>
                       </select>
                       <p>* Thông tin của quý khách luôn được bảo mật tuyệt đối.</p>
@@ -286,7 +286,7 @@ function FullPage(props) {
                         <option value>Hình Thức Vay Vốn</option>
                         <option value="Vay Theo Lương Chuyển Khoản">Vay Theo Lương Chuyển Khoản</option>
                         <option value="Vay Theo Lương Tiền Mặt">Vay Theo Lương Tiền Mặt</option>
-                        <option value="Lao Động Tự Do (Tạm Dừng Hỗ Trợ)">Lao Động Tự Do ( Tạm Dừng Hỗ Trơn )</option>
+                        <option value="Lao Động Tự Do (Tạm Dừng Hỗ Trợ)">Lao Động Tự Do ( Tạm Dừng Hỗ Trợ )</option>
                         <option value="Vay Theo Hợp Đồng BHNT">Vay Theo Hợp Đồng BHNT</option>
                       </select>
                       <button type="submit" className="contactPage--form__submit">
@@ -377,7 +377,7 @@ function FullPage(props) {
                         <option value>Hình Thức Vay Vốn</option>
                         <option value="Vay Theo Lương Chuyển Khoản">Vay Theo Lương Chuyển Khoản</option>
                         <option value="Vay Theo Lương Tiền Mặt">Vay Theo Lương Tiền Mặt</option>
-                        <option value="Lao Động Tự Do (Tạm Dừng Hỗ Trợ)">Lao Động Tự Do ( Tạm Dừng Hỗ Trơn )</option>
+                        <option value="Lao Động Tự Do (Tạm Dừng Hỗ Trợ)">Lao Động Tự Do ( Tạm Dừng Hỗ Trợ )</option>
                         <option value="Vay Theo Hợp Đồng BHNT">Vay Theo Hợp Đồng BHNT</option>
                       </select>
                       <button type="submit" className="contactPage--form__submit">
@@ -530,7 +530,7 @@ function FullPage(props) {
                     <option value>Hình Thức Vay Vốn</option>
                     <option value="Vay Theo Lương Chuyển Khoản">Vay Theo Lương Chuyển Khoản</option>
                     <option value="Vay Theo Lương Tiền Mặt">Vay Theo Lương Tiền Mặt</option>
-                    <option value="Lao Động Tự Do (Tạm Dừng Hỗ Trợ)">Lao Động Tự Do ( Tạm Dừng Hỗ Trơn )</option>
+                    <option value="Lao Động Tự Do (Tạm Dừng Hỗ Trợ)">Lao Động Tự Do ( Tạm Dừng Hỗ Trợ )</option>
                     <option value="Vay Theo Hợp Đồng BHNT">Vay Theo Hợp Đồng BHNT</option>
                   </select>
                   <p>* Thông tin của quý khách luôn được bảo mật tuyệt đối.</p>
