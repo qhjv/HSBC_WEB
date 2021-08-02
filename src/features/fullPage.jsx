@@ -316,7 +316,7 @@ function FullPage(props) {
                 </div>
                 <div className="col-md-6">
                     <div className="page6__title">
-                      <h4>Lãi suất vay tính chấp ngân hàng được tính:</h4>
+                      <h4>Lãi suất vay tín chấp ngân hàng được tính:</h4>
                     </div>
                     <div className="page6">
                       <p>+ Dư nợ giảm dần từ 18% đến 38%/năm tương đương lãi suất phẳng: 0,8% đến 1.8%/tháng ( Lãi suất khách hàng khi vay tùy thuộc vào đối tượng khách hàng tại Vietcombank, ưu đãi gói vay, ... Nhưng cao nhất là 1.8%/tháng)</p>
