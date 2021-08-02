@@ -163,7 +163,7 @@ function FullPage(props) {
                       VAY TÍN CHẤP LÀ GÌ?
                     </h5>
                   </div>
-                  <p className="page2__content--p"> Vay tín chấp không cần thế chấp tài sản dảm bảo (tổ chwucs cho vay
+                  <p className="page2__content--p"> Vay tín chấp không cần thế chấp tài sản dảm bảo (tổ chức cho vay
                     không yêu cầu bất kỳ tài sản nào),
                     dể được một khoản vay khác bạn cần phải có tài sản để thế chấp cho tỏ chức cho vay , ví dụ:
                     quyền sử dụng đất,
@@ -483,7 +483,7 @@ function FullPage(props) {
                   </li>
                   <li>
                     <i className="fa fa-phone" />
-                    Hotline: + 84 0383002528
+                    Hotline: +84383002528
                   </li>
                 </ul>
               </div>
