@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React,{useState} from 'react';
 import $ from "jquery"
-import emailjs from "emailjs-com"
 import banner from "../../src/assest/images/banner.jpg"
 import logo from "../../src/assest/images/logo.svg"
 import vaytinchaplagi1 from "../../src/assest/images/vaytinchaplagi1.jpg"
@@ -29,11 +28,21 @@ import doitac6 from "../../src/assest/images/doitac6.png"
 import zalo from "../../src/assest/images/zalo.png"
 import svg from "../../src/assest/images/notify.svg"
 import Dialog from '../components/dialog';
+import axios from "axios"
+
 FullPage.propTypes = {
 
 };
 
 function FullPage(props) {
+  const [name,setName] = useState("")
+  const [andress,setAndress] = useState("")
+  const [tel,setTel] = useState("")
+  const [money,setMoney] = useState("")
+  const [type,setType] = useState("")
+  const [working,setWorking] = useState("")
+  const [sent,setSent] = useState(false)
+
   var timer;
 
   var compareDate = new Date();
@@ -79,16 +88,55 @@ function FullPage(props) {
     $(".formPage").removeClass("hien")
     $(".overflowPage").removeClass("hien")
   }
-  function sendEmail(e) {
-    e.preventDefault();
-
-    emailjs.sendForm('service_bhee4uy', 'template_imepx8x', e.target, 'user_GXS3LEQItD3u4orfWy6Ue')
-      .then((result) => {
-        alert("Bạn đã đăng ký thành công ");
-      }, (error) => {
-        console.log(error.text);
-      });
+  const handleName =(e)=>{
+    setName(e.target.value)
   }
+  const handleAndress =(e)=>{
+    setAndress(e.target.value)
+  }
+  const handleTel =(e)=>{
+    setTel(e.target.value)
+  }
+  const handleMoney =(e)=>{
+    setMoney(e.target.value)
+  }
+  const handleWorking =(e)=>{
+    setWorking(e.target.value)
+  }
+  const handleType =(e)=>{
+    setType(e.target.value)
+  }
+  const sendEmail =(e)=>{
+    e.preventDefault();
+    let data = {
+      name:name,
+      andress:andress,
+      tel:tel,
+      money:money,
+      working:working,
+      type:type,
+    }
+    axios.post('/sent',data)
+    .then(res=>{
+      setSent(true,resetForm())
+    })
+    .catch(()=>{
+      console.log("Lỗi")
+    })
+
+  }
+const resetForm=()=>{
+
+      setName("")
+      setAndress("")
+      setMoney("")
+      setTel("")
+      setWorking("")
+      setType("")
+  setTimeout(() => {
+    setSent(false)
+  }, 3000);
+}
   return (
     <div>
       <div className="fullPage">
@@ -128,15 +176,55 @@ function FullPage(props) {
                   <img src={banner} alt="" />
                 </div>
                 <div className="page1__right col-md-12 col-lg-5 d-flex justify-content-center ">
-                  <form className="contactPage--form text-center" action onSubmit={sendEmail}>
+                  <form className="contactPage--form text-center" onSubmit={sendEmail}>
                     <div className="contactPage--input d-flex justify-content-center m-auto">
                       <h5 className="mb-3">ĐĂNG KÝ THÔNG TIN TƯ VẤN</h5>
-                      <input required name="name" type="text" placeholder="Họ Và Tên " id="name" />
-                      <input required name="andress" type="text" placeholder="Nơi Ở Hiện Tại" id="andress" />
-                      <input required name="sdt" type="tel" placeholder="Số Điện Thoại " id="sdt" />
-                      <input required name="money" type="text" placeholder="Số Tiền Muốn Vay" id="money" />
-                      <input required name="working" type="text" placeholder="Công Việc Đang Làm" id="working" />
-                      <select required name="hinhthucvay" id="hinhthucvay">
+                      <input 
+                        required 
+                        name="name" 
+                        type="text" 
+                        placeholder="Họ Và Tên " 
+                        id="name" 
+                        value={name}
+                        onChange={handleName}
+                      />
+                      <input 
+                        required 
+                        name="andress" 
+                        type="text" 
+                        placeholder="Nơi Ở Hiện Tại" 
+                        id="andress"
+                        value={andress}
+                        onChange={handleAndress}
+                      />
+                      <input 
+                        required 
+                        name="sdt" 
+                        type="tel" 
+                        placeholder="Số Điện Thoại " 
+                        id="sdt"
+                        value={tel} 
+                        onChange={handleTel}
+                      />
+                      <input 
+                        required 
+                        name="money" 
+                        type="text" 
+                        placeholder="Số Tiền Muốn Vay" 
+                        id="money" 
+                        value={money}
+                        onChange={handleMoney}  
+                      />
+                      <input 
+                        required 
+                        name="working" 
+                        type="text" 
+                        placeholder="Công Việc Đang Làm" 
+                        id="working" 
+                        onChange={handleWorking}
+                        value={working}  
+                      />
+                      <select required name="hinhthucvay" id="hinhthucvay" value={type} onChange={handleType}>
                         <option value>Hình Thức Vay Vốn</option>
                         <option value="Vay Theo Lương Chuyển Khoản">Vay Theo Lương Chuyển Khoản</option>
                         <option value="Vay Theo Lương Tiền Mặt">Vay Theo Lương Tiền Mặt</option>
@@ -274,15 +362,55 @@ function FullPage(props) {
                   <img className="img_taisao--img2" src={taisaochonPeople} alt="" />
                 </div>
                 <div className="col-md-12 col-lg-5">
-                  <form className="contactPage--form text-center" action onSubmit={sendEmail}>
+                  <form className="contactPage--form text-center" onSubmit={sendEmail}>
                     <div className="contactPage--input d-flex justify-content-center m-auto">
                       <h5 className="mb-3">ĐĂNG KÝ TƯ VẤN MIỄN PHÍ VỀ THỦ TỤC</h5>
-                      <input required name="name" type="text" placeholder="Họ Và Tên " id="name" />
-                      <input required name="andress" type="text" placeholder="Nơi Ở Hiện Tại" id="andress" />
-                      <input required name="sdt" type="tel" placeholder="Số Điện Thoại " id="sdt" />
-                      <input required name="money" type="text" placeholder="Số Tiền Muốn Vay" id="money" />
-                      <input required name="working" type="text" placeholder="Công Việc Đang Làm" id="working" />
-                      <select required name="hinhthucvay" id="hinhthucvay">
+                      <input 
+                        required 
+                        name="name" 
+                        type="text" 
+                        placeholder="Họ Và Tên " 
+                        id="name" 
+                        value={name}
+                        onChange={handleName}
+                      />
+                      <input 
+                        required 
+                        name="andress" 
+                        type="text" 
+                        placeholder="Nơi Ở Hiện Tại" 
+                        id="andress"
+                        value={andress}
+                        onChange={handleAndress}
+                      />
+                      <input 
+                        required 
+                        name="sdt" 
+                        type="tel" 
+                        placeholder="Số Điện Thoại " 
+                        id="sdt"
+                        value={tel} 
+                        onChange={handleTel}
+                      />
+                      <input 
+                        required 
+                        name="money" 
+                        type="text" 
+                        placeholder="Số Tiền Muốn Vay" 
+                        id="money" 
+                        value={money}
+                        onChange={handleMoney}  
+                      />
+                      <input 
+                        required 
+                        name="working" 
+                        type="text" 
+                        placeholder="Công Việc Đang Làm" 
+                        id="working" 
+                        onChange={handleWorking}
+                        value={working}  
+                      />
+                      <select required name="hinhthucvay" id="hinhthucvay" value={type} onChange={handleType}>
                         <option value>Hình Thức Vay Vốn</option>
                         <option value="Vay Theo Lương Chuyển Khoản">Vay Theo Lương Chuyển Khoản</option>
                         <option value="Vay Theo Lương Tiền Mặt">Vay Theo Lương Tiền Mặt</option>
@@ -319,7 +447,7 @@ function FullPage(props) {
                       <h4>Lãi suất vay tín chấp ngân hàng được tính:</h4>
                     </div>
                     <div className="page6">
-                      <p>+ Dư nợ giảm dần từ 18% đến 38%/năm tương đương lãi suất phẳng: 0,8% đến 1.8%/tháng ( Lãi suất khách hàng khi vay tùy thuộc vào đối tượng khách hàng tại Vietcombank, ưu đãi gói vay, ... Nhưng cao nhất là 1.8%/tháng)</p>
+                      <p>+ Dư nợ giảm dần từ 18% đến 38%/năm tương đương lãi suất phẳng: 0,8% đến 1.8%/tháng ( Lãi suất khi vay phụ thuộc vào mức lương và điều kiện của khách hàng, ưu đãi gói vay,.. Nhưng cao nhất là 1,8%/tháng )</p>
                       <p>+ Lãi suất vay tín chấp là cố định trong suốt quá trình khách hàng trả nợ cho Ngân hàng.</p>
                     </div>
                 </div>
@@ -382,16 +510,56 @@ function FullPage(props) {
                     <p>Bộ phận CSKH của HSBC sẽ liên hệ với Anh/Chị để xác nhận thông tin</p>
                     <p>và hướng dẫn anh chị làm thủ tục vay vốn ngay lập tức</p>
                   </div>
-                  <form className="contactPage--form text-center" action onSubmit={sendEmail}>
+                  <form className="contactPage--form text-center" onSubmit={sendEmail}>
                     <div className="contactPage--input d-flex justify-content-center m-auto">
                       <div className="namePhone d-flex justify-content-between align-items-center">
-                        <input required name="name" type="text" placeholder="Họ Và Tên " id="name" />
-                        <input required name="sdt" type="tel" placeholder="Số Điện Thoại " id="sdt" />
+                        <input 
+                          required 
+                          name="name" 
+                          type="text" 
+                          placeholder="Họ Và Tên " 
+                          id="name" 
+                          value={name}
+                          onChange={handleName}
+                        />
+                        <input 
+                          required 
+                          name="sdt" 
+                          type="tel" 
+                          placeholder="Số Điện Thoại " 
+                          id="sdt"
+                          value={tel} 
+                          onChange={handleTel}
+                        />
                       </div>
-                      <input required name="andress" type="text" placeholder="Nơi Ở Hiện Tại" id="andress" />
-                      <input required name="money" type="text" placeholder="Số Tiền Muốn Vay" id="money" />
-                      <input required name="working" type="text" placeholder="Công Việc Đang Làm" id="working" />
-                      <select required name="hinhthucvay" id="hinhthucvay">
+                      <input 
+                        required 
+                        name="andress" 
+                        type="text" 
+                        placeholder="Nơi Ở Hiện Tại" 
+                        id="andress"
+                        value={andress}
+                        onChange={handleAndress}
+                      />
+                      <input 
+                        required 
+                        name="money" 
+                        type="text" 
+                        placeholder="Số Tiền Muốn Vay" 
+                        id="money" 
+                        value={money}
+                        onChange={handleMoney}  
+                      />
+                      <input 
+                        required 
+                        name="working" 
+                        type="text" 
+                        placeholder="Công Việc Đang Làm" 
+                        id="working" 
+                        onChange={handleWorking}
+                        value={working}  
+                      />
+                      <select required name="hinhthucvay" id="hinhthucvay" value={type} onChange={handleType}>
                         <option value>Hình Thức Vay Vốn</option>
                         <option value="Vay Theo Lương Chuyển Khoản">Vay Theo Lương Chuyển Khoản</option>
                         <option value="Vay Theo Lương Tiền Mặt">Vay Theo Lương Tiền Mặt</option>
@@ -538,13 +706,53 @@ function FullPage(props) {
               <div className="formPage--forms col-md-8 col-lg-8 ">
                 <div className="formPage--off" onClick={handleCloseForm}><i className="fas fa-times" /></div>
                 <div className="formPage--content">ĐĂNG KÝ TƯ VẤN</div>
-                <form className="contactPage--form" action onSubmit={sendEmail}>
-                      <input required name="name" type="text" placeholder="Họ Và Tên " id="name" />
-                      <input required name="andress" type="text" placeholder="Nơi Ở Hiện Tại" id="andress" />
-                      <input required name="sdt" type="tel" placeholder="Số Điện Thoại " id="sdt" />
-                      <input required name="money" type="text" placeholder="Số Tiền Muốn Vay" id="money" />
-                      <input required name="working" type="text" placeholder="Công Việc Đang Làm" id="working" />
-                  <select required name="hinhthucvay" id="hinhthucvay">
+                <form className="contactPage--form" onSubmit={sendEmail}>
+                      <input 
+                        required 
+                        name="name" 
+                        type="text" 
+                        placeholder="Họ Và Tên " 
+                        id="name" 
+                        value={name}
+                        onChange={handleName}
+                      />
+                      <input 
+                        required 
+                        name="andress" 
+                        type="text" 
+                        placeholder="Nơi Ở Hiện Tại" 
+                        id="andress"
+                        value={andress}
+                        onChange={handleAndress}
+                      />
+                      <input 
+                        required 
+                        name="sdt" 
+                        type="tel" 
+                        placeholder="Số Điện Thoại " 
+                        id="sdt"
+                        value={tel} 
+                        onChange={handleTel}
+                      />
+                      <input 
+                        required 
+                        name="money" 
+                        type="text" 
+                        placeholder="Số Tiền Muốn Vay" 
+                        id="money" 
+                        value={money}
+                        onChange={handleMoney}  
+                      />
+                      <input 
+                        required 
+                        name="working" 
+                        type="text" 
+                        placeholder="Công Việc Đang Làm" 
+                        id="working" 
+                        onChange={handleWorking}
+                        value={working}  
+                      />
+                  <select required name="hinhthucvay" id="hinhthucvay" value={type} onChange={handleType}>
                     <option value>Hình Thức Vay Vốn</option>
                     <option value="Vay Theo Lương Chuyển Khoản">Vay Theo Lương Chuyển Khoản</option>
                     <option value="Vay Theo Lương Tiền Mặt">Vay Theo Lương Tiền Mặt</option>
