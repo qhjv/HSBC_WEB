@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import $ from "jquery"
 import banner from "../../src/assest/images/banner.jpg"
 import logo from "../../src/assest/images/logo.svg"
@@ -35,13 +35,13 @@ FullPage.propTypes = {
 };
 
 function FullPage(props) {
-  const [name,setName] = useState("")
-  const [andress,setAndress] = useState("")
-  const [tel,setTel] = useState("")
-  const [money,setMoney] = useState("")
-  const [type,setType] = useState("")
-  const [working,setWorking] = useState("")
-  const [sent,setSent] = useState(false)
+  const [name, setName] = useState("")
+  const [andress, setAndress] = useState("")
+  const [tel, setTel] = useState("")
+  const [money, setMoney] = useState("")
+  const [type, setType] = useState("")
+  const [working, setWorking] = useState("")
+  const [sent, setSent] = useState(false)
 
   var timer;
 
@@ -88,55 +88,56 @@ function FullPage(props) {
     $(".formPage").removeClass("hien")
     $(".overflowPage").removeClass("hien")
   }
-  const handleName =(e)=>{
+  const handleName = (e) => {
     setName(e.target.value)
   }
-  const handleAndress =(e)=>{
+  const handleAndress = (e) => {
     setAndress(e.target.value)
   }
-  const handleTel =(e)=>{
+  const handleTel = (e) => {
     setTel(e.target.value)
   }
-  const handleMoney =(e)=>{
+  const handleMoney = (e) => {
     setMoney(e.target.value)
   }
-  const handleWorking =(e)=>{
+  const handleWorking = (e) => {
     setWorking(e.target.value)
   }
-  const handleType =(e)=>{
+  const handleType = (e) => {
     setType(e.target.value)
   }
-  const sendEmail =(e)=>{
+  const sendEmail = (e) => {
     e.preventDefault();
     let data = {
-      name:name,
-      andress:andress,
-      tel:tel,
-      money:money,
-      working:working,
-      type:type,
+      name: name,
+      andress: andress,
+      tel: tel,
+      money: money,
+      working: working,
+      type: type,
     }
-    axios.post('/sent',data)
-    .then(res=>{
-      setSent(true,resetForm())
-    })
-    .catch(()=>{
-      console.log("Lỗi")
-    })
+    axios.post('https://dry-bastion-59034.herokuapp.com/api/mail', data)
+      .then(res => {
+        setSent(true, resetForm())
+        alert("Gửi thành công !!! ")
+      })
+      .catch(() => {
+        console.log("Lỗi")
+      })
 
   }
-const resetForm=()=>{
+  const resetForm = () => {
 
-      setName("")
-      setAndress("")
-      setMoney("")
-      setTel("")
-      setWorking("")
-      setType("")
-  setTimeout(() => {
-    setSent(false)
-  }, 3000);
-}
+    setName("")
+    setAndress("")
+    setMoney("")
+    setTel("")
+    setWorking("")
+    setType("")
+    setTimeout(() => {
+      setSent(false)
+    }, 3000);
+  }
   return (
     <div>
       <div className="fullPage">
@@ -179,50 +180,50 @@ const resetForm=()=>{
                   <form className="contactPage--form text-center" onSubmit={sendEmail}>
                     <div className="contactPage--input d-flex justify-content-center m-auto">
                       <h5 className="mb-3">ĐĂNG KÝ THÔNG TIN TƯ VẤN</h5>
-                      <input 
-                        required 
-                        name="name" 
-                        type="text" 
-                        placeholder="Họ Và Tên " 
-                        id="name" 
+                      <input
+                        required
+                        name="name"
+                        type="text"
+                        placeholder="Họ Và Tên "
+                        id="name"
                         value={name}
                         onChange={handleName}
                       />
-                      <input 
-                        required 
-                        name="andress" 
-                        type="text" 
-                        placeholder="Nơi Ở Hiện Tại" 
+                      <input
+                        required
+                        name="andress"
+                        type="text"
+                        placeholder="Nơi Ở Hiện Tại"
                         id="andress"
                         value={andress}
                         onChange={handleAndress}
                       />
-                      <input 
-                        required 
-                        name="sdt" 
-                        type="tel" 
-                        placeholder="Số Điện Thoại " 
+                      <input
+                        required
+                        name="sdt"
+                        type="tel"
+                        placeholder="Số Điện Thoại "
                         id="sdt"
-                        value={tel} 
+                        value={tel}
                         onChange={handleTel}
                       />
-                      <input 
-                        required 
-                        name="money" 
-                        type="text" 
-                        placeholder="Số Tiền Muốn Vay" 
-                        id="money" 
+                      <input
+                        required
+                        name="money"
+                        type="text"
+                        placeholder="Số Tiền Muốn Vay"
+                        id="money"
                         value={money}
-                        onChange={handleMoney}  
+                        onChange={handleMoney}
                       />
-                      <input 
-                        required 
-                        name="working" 
-                        type="text" 
-                        placeholder="Công Việc Đang Làm" 
-                        id="working" 
+                      <input
+                        required
+                        name="working"
+                        type="text"
+                        placeholder="Công Việc Đang Làm"
+                        id="working"
                         onChange={handleWorking}
-                        value={working}  
+                        value={working}
                       />
                       <select required name="hinhthucvay" id="hinhthucvay" value={type} onChange={handleType}>
                         <option value>Hình Thức Vay Vốn</option>
@@ -365,50 +366,50 @@ const resetForm=()=>{
                   <form className="contactPage--form text-center" onSubmit={sendEmail}>
                     <div className="contactPage--input d-flex justify-content-center m-auto">
                       <h5 className="mb-3">ĐĂNG KÝ TƯ VẤN MIỄN PHÍ VỀ THỦ TỤC</h5>
-                      <input 
-                        required 
-                        name="name" 
-                        type="text" 
-                        placeholder="Họ Và Tên " 
-                        id="name" 
+                      <input
+                        required
+                        name="name"
+                        type="text"
+                        placeholder="Họ Và Tên "
+                        id="name"
                         value={name}
                         onChange={handleName}
                       />
-                      <input 
-                        required 
-                        name="andress" 
-                        type="text" 
-                        placeholder="Nơi Ở Hiện Tại" 
+                      <input
+                        required
+                        name="andress"
+                        type="text"
+                        placeholder="Nơi Ở Hiện Tại"
                         id="andress"
                         value={andress}
                         onChange={handleAndress}
                       />
-                      <input 
-                        required 
-                        name="sdt" 
-                        type="tel" 
-                        placeholder="Số Điện Thoại " 
+                      <input
+                        required
+                        name="sdt"
+                        type="tel"
+                        placeholder="Số Điện Thoại "
                         id="sdt"
-                        value={tel} 
+                        value={tel}
                         onChange={handleTel}
                       />
-                      <input 
-                        required 
-                        name="money" 
-                        type="text" 
-                        placeholder="Số Tiền Muốn Vay" 
-                        id="money" 
+                      <input
+                        required
+                        name="money"
+                        type="text"
+                        placeholder="Số Tiền Muốn Vay"
+                        id="money"
                         value={money}
-                        onChange={handleMoney}  
+                        onChange={handleMoney}
                       />
-                      <input 
-                        required 
-                        name="working" 
-                        type="text" 
-                        placeholder="Công Việc Đang Làm" 
-                        id="working" 
+                      <input
+                        required
+                        name="working"
+                        type="text"
+                        placeholder="Công Việc Đang Làm"
+                        id="working"
                         onChange={handleWorking}
-                        value={working}  
+                        value={working}
                       />
                       <select required name="hinhthucvay" id="hinhthucvay" value={type} onChange={handleType}>
                         <option value>Hình Thức Vay Vốn</option>
@@ -431,25 +432,25 @@ const resetForm=()=>{
             <div className="container">
               <div className="row">
                 <div className="col-md-6">
-                    <div className="page6__title">
-                      <h3>Bảng tính lãi suất minh họa</h3>
-                    </div>
-                    <div className="page6">
-                      <p> - Số tiền khách hàng có nghĩa vụ phải trả hàng tháng là cố định ( Ví dụ: Vay 50 triệu trong 36 tháng. Mỗi tháng phải trả 1,8 triệu trong đó đã bao gồm cả gốc & lãi. Ngoài ra không phát sinh chi phí ngoài. Không phí hồ sơ vay vốn )</p>
-                      <p>- Ví dụ cụ thể: Khoản vay 100 triệu trong 48 tháng với lãi suất 0,6%/tháng</p>
-                      <p>Gốc trả hàng tháng: 100.000.000 : 48 = 2.084.000 đ</p>
-                      <p>Lãi trả hàng tháng: 100.000.000 x 0,6% = 600.000 đ</p>
-                      <p>Tổng số tiền Khách hàng trả hàng tháng: 2.084.000 + 600.000 = 2.684.000 đ</p>
-                    </div>
+                  <div className="page6__title">
+                    <h3>Bảng tính lãi suất minh họa</h3>
+                  </div>
+                  <div className="page6">
+                    <p> - Số tiền khách hàng có nghĩa vụ phải trả hàng tháng là cố định ( Ví dụ: Vay 50 triệu trong 36 tháng. Mỗi tháng phải trả 1,8 triệu trong đó đã bao gồm cả gốc & lãi. Ngoài ra không phát sinh chi phí ngoài. Không phí hồ sơ vay vốn )</p>
+                    <p>- Ví dụ cụ thể: Khoản vay 100 triệu trong 48 tháng với lãi suất 0,6%/tháng</p>
+                    <p>Gốc trả hàng tháng: 100.000.000 : 48 = 2.084.000 đ</p>
+                    <p>Lãi trả hàng tháng: 100.000.000 x 0,6% = 600.000 đ</p>
+                    <p>Tổng số tiền Khách hàng trả hàng tháng: 2.084.000 + 600.000 = 2.684.000 đ</p>
+                  </div>
                 </div>
                 <div className="col-md-6">
-                    <div className="page6__title">
-                      <h4>Lãi suất vay tín chấp ngân hàng được tính:</h4>
-                    </div>
-                    <div className="page6">
-                      <p>+ Dư nợ giảm dần từ 18% đến 38%/năm tương đương lãi suất phẳng: 0,8% đến 1.8%/tháng ( Lãi suất khi vay phụ thuộc vào mức lương và điều kiện của khách hàng, ưu đãi gói vay,.. Nhưng cao nhất là 1,8%/tháng )</p>
-                      <p>+ Lãi suất vay tín chấp là cố định trong suốt quá trình khách hàng trả nợ cho Ngân hàng.</p>
-                    </div>
+                  <div className="page6__title">
+                    <h4>Lãi suất vay tín chấp ngân hàng được tính:</h4>
+                  </div>
+                  <div className="page6">
+                    <p>+ Dư nợ giảm dần từ 18% đến 38%/năm tương đương lãi suất phẳng: 0,8% đến 1.8%/tháng ( Lãi suất khi vay phụ thuộc vào mức lương và điều kiện của khách hàng, ưu đãi gói vay,.. Nhưng cao nhất là 1,8%/tháng )</p>
+                    <p>+ Lãi suất vay tín chấp là cố định trong suốt quá trình khách hàng trả nợ cho Ngân hàng.</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -513,51 +514,51 @@ const resetForm=()=>{
                   <form className="contactPage--form text-center" onSubmit={sendEmail}>
                     <div className="contactPage--input d-flex justify-content-center m-auto">
                       <div className="namePhone d-flex justify-content-between align-items-center">
-                        <input 
-                          required 
-                          name="name" 
-                          type="text" 
-                          placeholder="Họ Và Tên " 
-                          id="name" 
+                        <input
+                          required
+                          name="name"
+                          type="text"
+                          placeholder="Họ Và Tên "
+                          id="name"
                           value={name}
                           onChange={handleName}
                         />
-                        <input 
-                          required 
-                          name="sdt" 
-                          type="tel" 
-                          placeholder="Số Điện Thoại " 
+                        <input
+                          required
+                          name="sdt"
+                          type="tel"
+                          placeholder="Số Điện Thoại "
                           id="sdt"
-                          value={tel} 
+                          value={tel}
                           onChange={handleTel}
                         />
                       </div>
-                      <input 
-                        required 
-                        name="andress" 
-                        type="text" 
-                        placeholder="Nơi Ở Hiện Tại" 
+                      <input
+                        required
+                        name="andress"
+                        type="text"
+                        placeholder="Nơi Ở Hiện Tại"
                         id="andress"
                         value={andress}
                         onChange={handleAndress}
                       />
-                      <input 
-                        required 
-                        name="money" 
-                        type="text" 
-                        placeholder="Số Tiền Muốn Vay" 
-                        id="money" 
+                      <input
+                        required
+                        name="money"
+                        type="text"
+                        placeholder="Số Tiền Muốn Vay"
+                        id="money"
                         value={money}
-                        onChange={handleMoney}  
+                        onChange={handleMoney}
                       />
-                      <input 
-                        required 
-                        name="working" 
-                        type="text" 
-                        placeholder="Công Việc Đang Làm" 
-                        id="working" 
+                      <input
+                        required
+                        name="working"
+                        type="text"
+                        placeholder="Công Việc Đang Làm"
+                        id="working"
                         onChange={handleWorking}
-                        value={working}  
+                        value={working}
                       />
                       <select required name="hinhthucvay" id="hinhthucvay" value={type} onChange={handleType}>
                         <option value>Hình Thức Vay Vốn</option>
@@ -707,51 +708,51 @@ const resetForm=()=>{
                 <div className="formPage--off" onClick={handleCloseForm}><i className="fas fa-times" /></div>
                 <div className="formPage--content">ĐĂNG KÝ TƯ VẤN</div>
                 <form className="contactPage--form" onSubmit={sendEmail}>
-                      <input 
-                        required 
-                        name="name" 
-                        type="text" 
-                        placeholder="Họ Và Tên " 
-                        id="name" 
-                        value={name}
-                        onChange={handleName}
-                      />
-                      <input 
-                        required 
-                        name="andress" 
-                        type="text" 
-                        placeholder="Nơi Ở Hiện Tại" 
-                        id="andress"
-                        value={andress}
-                        onChange={handleAndress}
-                      />
-                      <input 
-                        required 
-                        name="sdt" 
-                        type="tel" 
-                        placeholder="Số Điện Thoại " 
-                        id="sdt"
-                        value={tel} 
-                        onChange={handleTel}
-                      />
-                      <input 
-                        required 
-                        name="money" 
-                        type="text" 
-                        placeholder="Số Tiền Muốn Vay" 
-                        id="money" 
-                        value={money}
-                        onChange={handleMoney}  
-                      />
-                      <input 
-                        required 
-                        name="working" 
-                        type="text" 
-                        placeholder="Công Việc Đang Làm" 
-                        id="working" 
-                        onChange={handleWorking}
-                        value={working}  
-                      />
+                  <input
+                    required
+                    name="name"
+                    type="text"
+                    placeholder="Họ Và Tên "
+                    id="name"
+                    value={name}
+                    onChange={handleName}
+                  />
+                  <input
+                    required
+                    name="andress"
+                    type="text"
+                    placeholder="Nơi Ở Hiện Tại"
+                    id="andress"
+                    value={andress}
+                    onChange={handleAndress}
+                  />
+                  <input
+                    required
+                    name="sdt"
+                    type="tel"
+                    placeholder="Số Điện Thoại "
+                    id="sdt"
+                    value={tel}
+                    onChange={handleTel}
+                  />
+                  <input
+                    required
+                    name="money"
+                    type="text"
+                    placeholder="Số Tiền Muốn Vay"
+                    id="money"
+                    value={money}
+                    onChange={handleMoney}
+                  />
+                  <input
+                    required
+                    name="working"
+                    type="text"
+                    placeholder="Công Việc Đang Làm"
+                    id="working"
+                    onChange={handleWorking}
+                    value={working}
+                  />
                   <select required name="hinhthucvay" id="hinhthucvay" value={type} onChange={handleType}>
                     <option value>Hình Thức Vay Vốn</option>
                     <option value="Vay Theo Lương Chuyển Khoản">Vay Theo Lương Chuyển Khoản</option>
