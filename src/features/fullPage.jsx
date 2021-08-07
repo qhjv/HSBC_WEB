@@ -29,6 +29,7 @@ import zalo from "../../src/assest/images/zalo.png"
 import svg from "../../src/assest/images/notify.svg"
 import Dialog from '../components/dialog';
 import axios from "axios"
+import Swal from 'sweetalert2'
 
 FullPage.propTypes = {
 
@@ -118,8 +119,12 @@ function FullPage(props) {
     }
     axios.post('https://dry-bastion-59034.herokuapp.com/api/mail', data)
       .then(res => {
+        Swal.fire(
+          'Đăng ký thành công !',
+          'Chúng tôi sẽ liên hệ với bạn sớm nhất!',
+          'success'
+        )
         setSent(true, resetForm())
-        alert("Gửi thành công !!! ")
       })
       .catch(() => {
         console.log("Lỗi")
