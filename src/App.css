@@ -521,7 +521,7 @@ i.fa.fa-phone{
 .zaloFix,
 .formPage,
 .notify{
-    z-index: 999;
+    z-index: 1;
     position:fixed
 }
 .dangkytuvan{
@@ -584,7 +584,7 @@ i.fa.fa-phone{
     background: #0000008f;
     opacity: 0;
     visibility: hidden;
-    z-index: 99;
+    z-index: 2;
 }
 .hien{
     opacity: 1!important;
@@ -603,12 +603,12 @@ i.fa.fa-phone{
     margin-top: 25px;
     opacity: 0;
     visibility: hidden;
-    z-index: 9999;
+    z-index: 2;
 
 }
 .formPage--forms{
     position: relative;
-    z-index: 9999;
+    z-index: 2;
 }
 .formPage--form{
     padding:50px
